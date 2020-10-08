@@ -7,17 +7,18 @@ function scrollPara(id) {
 }
 
 function maskInput() {
-   const tel = document.getElementById('cellnumber')
+   const tel = document.getElementById('cellnumber');
 
-   tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) 
-   tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) 
-   
    const mascaraTelefone = (valor) => {
       valor = valor.replace(/\D/g, "")
-      valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-      valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-      tel.value = valor // Insere o(s) valor(es) no campo
+      valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+      valor = valor.replace(/(\d)(\d{4})$/, "$1-$2");
+      tel.value = valor;
    }
+
+   tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)); 
+   tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)); 
+   
 }
 
 $(function () {
