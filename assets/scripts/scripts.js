@@ -1,6 +1,6 @@
 function scrollPara(id) {
    $('html, body').animate({
-      scrollTop: $(id).offset().top - 75
+      scrollTop: $(id).offset().top
    }, 800, function () {
       window.location.hash = id;
    });
@@ -33,6 +33,9 @@ $(function () {
       scrollPara("#usage-example");
    });
    $("#irParaHelloWorld").on("click", function () {
+      scrollPara("#example-hello");
+   });
+   $("#irParaHelloWorldBanner").on("click", function () {
       scrollPara("#example-hello");
    });
    $("#irParaVariables").on("click", function () {
